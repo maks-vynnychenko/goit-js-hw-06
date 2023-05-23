@@ -16,13 +16,15 @@ let originalBoxSize = 30;
 
 function destroyBoxes() {
   boxesEL.innerHTML = '';
+  originalBoxSize = 30;
 }
 
 function createBoxes() {
   const numberOfBoxes = inputEl.value;
   let boxesString = '';
-  for (let size = 30, i = 0; i < numberOfBoxes; i++, size += 10) {
-    boxesString += `<div style="background-color: ${getRandomHexColor()}; width: ${size}px; height: ${size}px"></div>\n`;
+  for (let i = 0; i < numberOfBoxes; i++) {
+    originalBoxSize += 10;
+    boxesString += `<div style="background-color: ${getRandomHexColor()}; width: ${originalBoxSize}px; height: ${originalBoxSize}px"></div>\n`;
   }
   boxesEL.insertAdjacentHTML('beforeend', boxesString);
   inputEl.value = 0;
