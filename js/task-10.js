@@ -17,6 +17,7 @@ let originalBoxSize = 30;
 function destroyBoxes() {
   boxesEL.innerHTML = '';
   originalBoxSize = 30;
+  inputEl.value = 0;
 }
 
 function createBoxes() {
@@ -27,5 +28,4 @@ function createBoxes() {
     boxesString += `<div style="background-color: ${getRandomHexColor()}; width: ${originalBoxSize}px; height: ${originalBoxSize}px"></div>\n`;
   }
   boxesEL.insertAdjacentHTML('beforeend', boxesString);
-  inputEl.value = 0;
 }
